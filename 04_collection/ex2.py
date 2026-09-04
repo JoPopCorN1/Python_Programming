@@ -6,51 +6,61 @@
 
 langs = ["c", "c++", "java", "python"]
 
-#                   # 끝에 추가
+langs.append("go")                      # 끝에 추가
+print(langs)
+
+langs.insert(2,"c#")                    # 인덱스 2에 "c#" 추가
+print(langs)
+
+langs[3]="javascript"                   # 인덱스 3을 "javascript"로 변경
+print(langs)
+
+langs.remove("c++")                     # "c++" 삭제 (첫번째 데이터만 삭제)
+print(langs)
+
+langs.pop(1)                            # 인덱스 1 삭제
+print(langs)
+
+langs.pop()                             # 인덱스 생략 시 마지막 항목 삭제
+print(langs)
+
+print(langs.index("python"))            # "python" 인덱스 찾기
+
+langs.reverse()                         # 리스트 순서를 거꾸로 뒤집기
+print(langs)
+
+langs.sort()                            # 오름차순 정렬
+print(langs)
+
+langs.sort(reverse=True)                # 내림차순 정렬
 # print(langs)
 
-#                # 인덱스 2에 "c#" 추가
-# print(langs)
-
-#              # 인덱스 3을 "javascript"로 변경
-# print(langs)
-
-#                  # "c++" 삭제 (첫번째 데이터만 삭제)
-# print(langs)
-
-#                         # 인덱스 1 삭제
-# print(langs)
-
-#                          # 인덱스 생략 시 마지막 항목 삭제
-# print(langs)
-
-# print()        # "python" 인덱스 찾기
-
-#                      # 리스트 순서를 거꾸로 뒤집기
-# print(langs)
-
-#                         # 오름차순 정렬
-# print(langs)
-
-#             # 내림차순 정렬
-# print(langs)
-
-#                        # 모든 item 삭제
+langs.clear()                           # 모든 item 삭제
 # print(langs)
 
 # 리스트 복사
 ori = [1, 2, 3]
 
-
+result=ori.copy()
+print(result)
+result.append(10)
+print(ori,result)
 
 # 얕은 복사(shallow copy) vs 깊은 복사(deep copy)
 ori = [[1, 2], [3, 4]]
 
+result2=ori.copy()
+result2[0].append(100)                  # 원본도 같이 바뀜
 
+print(ori,result2)
 
 # 깊은 복사를 하려면?
+import copy
 
+result2=copy.deepcopy(ori)
+result2[0].append(1000)                 # 복사본만 바뀜
 
+print(ori,result2)
 
 # ===========================================================
 #  그 외
@@ -59,9 +69,9 @@ ori = [[1, 2], [3, 4]]
 # 중첩리스트
 nested_list = [1, ["a", ["x", "y"], "b"], 2]
 
-# print(nested_list)         # x 출력하기
-# print(nested_list)            # b 출력하기
-# print(nested_list)               # 2 출력하기
+print(nested_list[1][1][0])             # x 출력하기
+print(nested_list[1][2])                # b 출력하기
+print(nested_list[2])                   # 2 출력하기
 
 # 리스트 언패킹
 
