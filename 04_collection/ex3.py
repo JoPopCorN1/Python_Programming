@@ -92,3 +92,5 @@ print(a+(10,20))
 print(a*2)
 
 # 멤버십 연산자
+print(1 in a)
+print(10 in a)
