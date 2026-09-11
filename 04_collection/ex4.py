@@ -116,9 +116,11 @@ print(f"{days[hours.index(max(hours))]}요일")                                 
 
 # 4️⃣ 가장 높은 점수와 가장 낮은 점수 출력하기
 scores = (90, 85, 78, 92, 88, 76)
+Sscores=sorted(scores)
 
+print(f"max 점수: {Sscores[-1]}점 ,min 점수: {Sscores[0]}점")
 
-print(f"max 점수: {max(scores)}점, min 점수: {min(scores)}점")                    # ✅ max 점수: 92점, min 점수: 76점
+# print(f"max 점수: {max(scores)}점, min 점수: {min(scores)}점")                    # ✅ max 점수: 92점, min 점수: 76점
 
 
 # 5️⃣ 과일가게 총 재고 금액 구하기
@@ -129,5 +131,6 @@ stocks = (
 )
 
 # 총 재고 금액 출력
-
-print(f"총액: {sum(tuple(i[1]*i[2] for i in stocks)):,d}원")                   # ✅ 총액: 21,000원
+total=sum(price*qty for _,price,qty in stocks)
+print(f"총액: {total}")
+#print(f"총액: {sum(tuple(i[1]*i[2] for i in stocks)):,d}원")                   # ✅ 총액: 21,000원
