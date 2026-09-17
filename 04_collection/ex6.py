@@ -84,7 +84,7 @@ for w in words:
 print(count)                                    # ✅ {'apple': 3, 'banana': 2, 'cherry': 1}
 
 # 2) dict 컴프리헨션
-count={w:words.count(w) for w in words}
+count={w:words.count(w) for w in set(words)}
 
 # 3) Counter: 요쇼의 빈도수를 세어주는 딕셔너리 서브클래스
 from collections import Counter
